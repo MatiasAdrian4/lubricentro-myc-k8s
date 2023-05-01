@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lmyc-frontend
+  template:
+    metadata:
+      labels:
+        app: lmyc-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: 967785586193.dkr.ecr.us-east-2.amazonaws.com/lubricentro-myc-frontend:e83a7e715ca10a8b129d5471eac3a2fcae01a752
+          ports:
+            - containerPort: 3000
