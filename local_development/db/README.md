@@ -18,3 +18,7 @@ Run the service:
 ```
 kubectl apply -f db/service.yaml
 ```
+Test connection:
+```
+kubectl exec -it postgresdb-8557bc6958-8qpmp -- psql -h localhost -U matiasadrian4 --password -p 5432 lubricentro_myc
+```

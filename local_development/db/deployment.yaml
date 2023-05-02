@@ -23,16 +23,27 @@ spec:
         - name: postgresdb
           # pull postgresimage from docker hub
           image: postgres
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: password
+
+            - name: POSTGRES_DB
+              value: lubricentro_myc
+
           ports:
             # Assign ports to expose container
             - containerPort: 5432
-          envFrom:
-            # Load the environment variables/PostgresSQL credentials
-            - configMapRef:
-                # This should be the ConfigMap name created ealier
-                name: db-secret-credentials
           volumeMounts:
-            # The volume mounts  for the container
+            # The volume mounts for the container
             - mountPath: /var/lib/postgres/data
               name: db-data
       # Volumes attached to the pod
