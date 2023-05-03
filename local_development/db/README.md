@@ -20,5 +20,5 @@ kubectl apply -f db/service.yaml
 ```
 Test connection:
 ```
-kubectl exec -it postgresdb-8557bc6958-8qpmp -- psql -h localhost -U matiasadrian4 --password -p 5432 lubricentro_myc
+kubectl exec -it postgres-deployment-57d7c67b6-ht4nk -- psql -h localhost -U matiasadrian4 --password -p 5432 lubricentro_myc
 ```

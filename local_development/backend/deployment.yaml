@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lmyc-backend-deployment
+  labels:
+    app: lmyc-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lmyc-backend-container
+  template:
+    metadata:
+      labels:
+        app: lmyc-backend-container
+    spec:
+      containers:
+        - image: public.ecr.aws/m2q6z9r8/lmyc-testing:latest
+          name: backend
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB_NAME
+              value: lubricentro_myc
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: password
+            - name: DB_HOST
+              value: postgres-service

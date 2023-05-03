@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgresdb
+  name: postgres-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: postgresdb
+      app: postgres-container
   template:
     metadata:
       labels:
-        app: postgresdb
+        app: postgres-container
     spec:
       containers:
-        - name: postgresdb
+        - name: postgres-container
           image: postgres
           env:
             - name: POSTGRES_USER
