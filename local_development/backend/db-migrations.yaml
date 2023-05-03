@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migrations
+spec:
+  template:
+    spec:
+      containers:
+        - image: public.ecr.aws/m2q6z9r8/lmyc-testing:latest
+          name: lmyc-backend-container
+          command: ['python', 'manage.py', 'migrate']
+          env:
+            - name: DB_NAME
+              value: lubricentro_myc
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: password
+            - name: DB_HOST
+              value: postgres-service
+      restartPolicy: Never
+  backoffLimit: 5
