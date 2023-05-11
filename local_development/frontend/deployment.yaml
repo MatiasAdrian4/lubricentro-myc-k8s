@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lymc-frontend-deployment
+  labels:
+    app: lymc-frontend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: lmyc-frontend-container
+  template:
+    metadata:
+      labels:
+        app: lmyc-frontend-container
+    spec:
+      containers:
+        - image: public.ecr.aws/m2q6z9r8/lmyc-frontend-public:latest
+          name: frontend
+          ports:
+            - containerPort: 3000
+          env:
+            - name: LMYC_BACKEND_HOST
+              value: lmyc-backend-service
