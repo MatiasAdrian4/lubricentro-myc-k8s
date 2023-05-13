@@ -11,3 +11,7 @@ Run migrations (delete deployment, update image and deploy again):
 kubectl delete -f local_development/backend/db-migrations.yaml
 kubectl apply -f local_development/backend/db-migrations.yaml
 ```
+Apply Ingress:
+```
+kubectl apply -f local_development/backend/ingress.yaml
+```

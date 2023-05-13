@@ -20,4 +20,4 @@ spec:
             - containerPort: 3000
           env:
             - name: LMYC_BACKEND_HOST
-              value: lmyc-backend-service
+              value: "kubernetes.docker.internal:8000/backend"
