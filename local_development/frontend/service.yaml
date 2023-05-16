@@ -5,9 +5,9 @@ metadata:
   labels:
     app: lmyc-frontend-service
 spec:
-  type: NodePort
   selector:
     app: lmyc-frontend-container
   ports:
-    - port: 3000
+    - protocol: TCP
+      port: 3000
       targetPort: 3000
