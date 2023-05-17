@@ -5,6 +5,9 @@
 minikube start
 ```
 
+## Deploy NGINX
+Follow [this steps](https://github.com/MatiasAdrian4/lubricentro-myc-k8s/blob/main/local_development/nginx/README.md).
+
 ## Deploy Postgres DB
 Follow [this steps](https://github.com/MatiasAdrian4/lubricentro-myc-k8s/blob/main/local_development/db/README.md).
 
