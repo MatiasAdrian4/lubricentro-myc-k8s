@@ -6,8 +6,9 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
+  ingressClassName: nginx
   rules:
-    - host: kubernetes.docker.internal
+    - host: lubricentromyc.com
       http:
         paths:
           - path: /backend(/|$)(.*)
@@ -15,5 +16,5 @@ spec:
             backend:
               service:
                 name: lmyc-backend-service
-                port:   
+                port:
                   number: 8000

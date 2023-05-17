@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: lmyc-frontend-ingress
 spec:
+  ingressClassName: nginx
   rules:
-    - host: kubernetes.docker.internal
+    - host: lubricentromyc.com
       http:
         paths:
           - path: /
