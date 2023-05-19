@@ -1,22 +1,22 @@
 Deploy the PV:
 ```
-kubectl apply -f local_development/db/persistent-volume.yaml
+kubectl apply -f db/persistent-volume.yaml
 ```
 Deploy the PVC:
 ```
-kubectl apply -f local_development/db/volume-claim.yaml
+kubectl apply -f db/volume-claim.yaml
 ```
-Deploy environment variables:
+Deploy secrets:
 ```
-kubectl apply -f local_development/db/configmap.yaml
+kubectl apply -f db/secrets.yaml
 ```
 Create the deployment and add pods replicas:
 ```
-kubectl apply -f local_development/db/deployment.yaml
+kubectl apply -f db/deployment.yaml
 ```
 Run the service:
 ```
-kubectl apply -f local_development/db/service.yaml
+kubectl apply -f db/service.yaml
 ```
 Test connection:
 ```
