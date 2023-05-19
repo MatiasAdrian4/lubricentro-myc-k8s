@@ -27,6 +27,6 @@ At the endpoint of the file:
 
 ## Open application in browser
 ```
-sudo kubectl -n ingress-nginx port-forward svc/ingress-nginx-controller 443
+sudo kubectl -n ingress-nginx port-forward svc/ingress-nginx-controller 80
 ```
-Open https://lubricentromyc.com.
+Open http://lubricentromyc.com.

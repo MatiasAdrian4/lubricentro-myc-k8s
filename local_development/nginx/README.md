@@ -14,3 +14,7 @@ For deploying nginx:
 kubectl create namespace ingress-nginx
 kubectl apply -f nginx/manifests/nginx-ingress.1.7.1.yaml
 ```
+For watching logs:
+```
+kubectl -n ingress-nginx logs -l app.kubernetes.io/instance=ingress-nginx
+```

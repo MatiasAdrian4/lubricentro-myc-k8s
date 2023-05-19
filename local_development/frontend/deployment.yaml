@@ -19,5 +19,9 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: LMYC_BACKEND_HOST
-              value: "backend/lubricentro_myc"
+            # Used for request coming from a browser
+            - name: LMYC_BACKEND_HOST_EXTERNAL
+              value: "http://lubricentromyc.com/backend/lubricentro_myc"
+            # Used for request coming from the NextJS server (getServerSideProps)
+            - name: LMYC_BACKEND_HOST_INTERNAL
+              value: "http://lmyc-backend-service:8000/lubricentro_myc"
