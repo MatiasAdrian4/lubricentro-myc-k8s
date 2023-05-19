@@ -8,13 +8,13 @@ minikube start
 ## Deploy NGINX
 Follow [this steps](https://github.com/MatiasAdrian4/lubricentro-myc-k8s/blob/main/local_development/nginx/README.md).
 
-## Deploy Postgres DB
+## Deploy Postgres DB
 Follow [this steps](https://github.com/MatiasAdrian4/lubricentro-myc-k8s/blob/main/local_development/db/README.md).
 
-## Deploy Backend service
+## Deploy Backend service
 Follow [this steps](https://github.com/MatiasAdrian4/lubricentro-myc-k8s/blob/main/local_development/backend/README.md).
 
-## Deploy Frontend service
+## Deploy Frontend service
 Follow [this steps](https://github.com/MatiasAdrian4/lubricentro-myc-k8s/blob/main/local_development/frontend/README.md).
 
 ## Edit /etc/hosts file for including lubricentromyc.com host
