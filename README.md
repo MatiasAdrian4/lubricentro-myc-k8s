@@ -4,7 +4,7 @@ Kubernetes files used to deploy Lubricentro M&C BE and FE in k8s.
 
 ## Local setup using Minikube
 
-### Start minikube
+### Start minikube
 ```
 minikube start
 ```
